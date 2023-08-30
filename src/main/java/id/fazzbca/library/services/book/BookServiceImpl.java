@@ -124,5 +124,16 @@ public class BookServiceImpl implements BookService {
 
     return ResponseHandler.responseMessage(200, "Successfully deleted!", true);
   }
+  @Override
+  public ResponseEntity<?> getBorrowedBooksInfo() {
+      
+    List<Book> books = new ArrayList<>();
+    
+    books = bookRepository.findByIsBorrowed();
+
+    // return response data
+    return ResponseHandler.responseData(200, "success", books);
+  }
+
 
 }

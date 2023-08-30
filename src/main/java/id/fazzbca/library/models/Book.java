@@ -29,17 +29,18 @@ public class Book {
   @Column(length = 100)
   private String title;
 
+  
   @Column(length = 4)
   private String year;
 
   @ManyToOne
   @JoinColumn(name = "author_id")
   private Author author;
-
+  @Column(name = "is_borrowed")
+  private boolean borrowed;
   @ManyToOne
   @JoinColumn(name = "publisher_id")
   private Publisher publisher;
-
   @CreationTimestamp
   private LocalDateTime createdAt;
 

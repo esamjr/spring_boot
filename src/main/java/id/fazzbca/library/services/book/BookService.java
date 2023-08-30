@@ -19,4 +19,6 @@ public interface BookService {
 
   // delete book by id
   ResponseEntity<?> deleteBookService(String id);
+  ResponseEntity<?> getBorrowedBooksInfo();
+
 }
