@@ -12,6 +12,9 @@ public interface AuthorRepository extends JpaRepository<Author, String> {
   // '%a%'
   List<Author> findByNameContaining(String name);
 
+  // where name = value
+  Author findByName(String name);
+
   @Query(value = "select * from authors where name like %?%", nativeQuery = true)
   List<Author> getAuthorByName(String name);
 }
